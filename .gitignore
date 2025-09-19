@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+.env
+
+# Data & artifacts — never commit
+data/
+*.parquet
+*.csv
+*.pkl
+*.joblib
+reports/predictions/
+reports/tables/
+
+# Figures are kept in git so the README renders on GitHub
+!reports/figures/
+!reports/figures/*.png
+!reports/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# Notebook builder scripts (kept locally, not tracked)
+scripts/build_[0-9][0-9]_*.py

@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ml-return-forecast"
+version = "0.1.0"
+description = "Absolute forward-return regression on S&P 500 with macro features — companion to ml-cross-sectional"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "qtools @ git+https://github.com/matthiola0/qtools.git@v0.3.0",
+    "lightgbm>=4.3",
+    "xgboost>=2.0",
+    "scikit-learn>=1.4",
+    "shap>=0.45",
+    "statsmodels>=0.14",
+    "seaborn>=0.13",
+    "jupyterlab>=4.0",
+    "nbformat>=5.9",
+    "lxml>=5.0",
+    "requests>=2.31",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mlr"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B"]
